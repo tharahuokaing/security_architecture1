@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HT Banking System - Security Architecture Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="security-dashboard">
+        <!-- Module Header -->
+        <header class="module-header">
+            <div class="title-area">
+                <h2>CORE SECURITY ARCHITECTURE & SOC PANEL</h2>
+                <p>Huokaing Thara Banking System • Perimeter Protection & Intrusion Prevention</p>
+            </div>
+            <div class="action-buttons">
+                <button id="rotateKeysBtn" class="btn-secondary">Rotate Crypto Keys</button>
+                <button id="purgeLogsBtn" class="btn-primary">Deploy Security Patch</button>
+            </div>
+        </header>
+
+        <!-- Live Infrastructure Threat Metrics -->
+        <section class="metrics-row">
+            <div class="metric-card">
+                <span class="card-label">Threat Mitigation State</span>
+                <h2 id="threatStateText">Secured</h2>
+                <p class="card-subtext state-success">● Zero zero-day exploits active</p>
+            </div>
+            <div class="metric-card">
+                <span class="card-label">Blocked Malicious Requests</span>
+                <h2 id="blockedCountText">14,205</h2>
+                <p class="card-subtext state-normal">Aggregated across edge nodes today</p>
+            </div>
+            <div class="metric-card">
+                <span class="card-label">Active Brute-force Lockouts</span>
+                <h2 id="lockoutCountText">0</h2>
+                <p class="card-subtext state-warning">Staged inside rate limiter pools</p>
+            </div>
+        </section>
+
+        <!-- Main Workspace Section Layout -->
+        <div class="panel-layout">
+            
+            <!-- Guard Firewall Incident Log -->
+            <section class="data-panel log-section">
+                <div class="panel-title">
+                    <h3>Real-Time Incident Stream</h3>
+                    <!-- Filter Navigation Elements -->
+                    <div class="filter-pills" id="securityFilterGroup">
+                        <button class="pill active" data-filter="all">All Logs</button>
+                        <button class="pill" data-filter="blocked">Blocked</button>
+                        <button class="pill" data-filter="monitored">Monitored</button>
+                    </div>
+                </div>
+                
+                <div class="table-wrapper">
+                    <table class="security-table">
+                        <thead>
+                            <tr>
+                                <th>Incident ID</th>
+                                <th>Vector / Threat Type</th>
+                                <th>Target Endpoint Node</th>
+                                <th>IP Address Scope</th>
+                                <th>Mitigation State</th>
+                            </tr>
+                        </thead>
+                        <tbody id="securityTableBody">
+                            <!-- Populated dynamically via security_architecture.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- SOC Telemetry Monitoring Feed -->
+            <section class="data-panel terminal-section">
+                <div class="panel-title">
+                    <h3>Perimeter Monitoring Console</h3>
+                </div>
+                <div class="terminal-wrapper">
+                    <div class="terminal-body" id="socTerminalConsole">
+                        <!-- Streamed telemetry items written dynamically -->
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="security_architecture.js"></script>
+</body>
+</html>
